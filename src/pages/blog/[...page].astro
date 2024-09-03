@@ -20,7 +20,7 @@ async function listTags() {
 		}
 	});
 
-	return Array.from(tags);
+	return Array.from(tags).sort();
 }
 
 const { page } = Astro.props;
