@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("projects");
-  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  return paginate(posts, { pageSize: 10 });
+	const posts = await getCollection("projects");
+	posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	return paginate(posts, { pageSize: 10 });
 }
 
 const { page } = Astro.props;

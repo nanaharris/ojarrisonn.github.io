@@ -11,16 +11,16 @@ export async function getStaticPaths({ paginate }) {
 }
 
 async function listTags() {
-  const posts = await getCollection("blog");
-  const tags = new Set();
-  
-  posts.forEach((post) => {
-    if (post.data.tags) {
-      post.data.tags.forEach((tag) => tags.add(tag));
-    }
-  });
+	const posts = await getCollection("blog");
+	const tags = new Set();
 
-  return Array.from(tags);
+	posts.forEach((post) => {
+		if (post.data.tags) {
+			post.data.tags.forEach((tag) => tags.add(tag));
+		}
+	});
+
+	return Array.from(tags);
 }
 
 const { page } = Astro.props;
