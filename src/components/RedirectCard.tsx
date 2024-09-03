@@ -1,4 +1,3 @@
-import type { ClassType } from "react";
 import type React from "react";
 import type { IconType } from "react-icons";
 import { IoChevronForward } from "react-icons/io5";
