@@ -1,8 +1,12 @@
 ---
+import { CONTACT_EMAIL } from "src/config";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const age = Math.floor((Date.now() - new Date("2004-07-16").getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+const age = Math.floor(
+	(Date.now() - new Date("2004-07-16").getTime()) /
+		(1000 * 60 * 60 * 24 * 365.25),
+);
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
@@ -14,6 +18,8 @@ const age = Math.floor((Date.now() - new Date("2004-07-16").getTime()) / (1000 *
     My name is Jorge Harrisonn, I am a {age} years old Computer Science student at the University of São Paulo (USP) who is passionate about technology and programming. 
     <br />
     As a self-taught, I started learning programming at the age of 12 by my self at home with my old laptop and a 1 Mbps internet connection. Since then, I've learnt a lot of different technologies and concepts. This helped me a lot to be able to learn new stuff quickly.
+    <br />
+    You can email me <a href=`mailto:${CONTACT_EMAIL}` class="text-accent">&lt;{CONTACT_EMAIL}&gt;</a>.
   </div>
 
   <div class="mb-5">
