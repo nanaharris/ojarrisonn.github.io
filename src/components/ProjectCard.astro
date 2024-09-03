@@ -1,0 +1,34 @@
+---
+const { slug, title, img, desc, url, badge, target = "_self" } = Astro.props;
+import { Image } from "astro:assets";
+import createSlug from "src/lib/createSlug";
+---
+
+<div
+  class="rounded-lg bg-base-200 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
+  <a href={`/projects/${createSlug(title, slug)}`} target={target}>
+    <div class="hero-content flex-col md:flex-col">
+      {
+        img && (
+          <Image
+            src={img}
+            width={750}
+            height={422}
+            format="webp"
+            alt={title}
+            class="max-w-full md:max-w-[50rem] rounded-lg"
+          />
+        )
+      }
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {title}
+          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+        </h1>
+        <p class="py-1 text-1xl">{desc}</p>
+        {url && <a href={url} class="text-primary underline">{url}</a>}
+      </div>
+    </div>
+  </a>
+</div>

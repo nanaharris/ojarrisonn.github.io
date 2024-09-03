@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("projects");
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="projects">
+  <div>
+    <div class="text-3xl w-full font-bold mb-5">Projects</div>
+  </div>
+
+  {
+    page.data.length === 0 ? (
+      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
+        <p class="font-bold">Sorry!</p>
+        <p>There are no projects posts to show at the moment. Check back later!</p>
+      </div>
+    ) : (
+      <ul>
+        {page.data.map((post) => (
+          <>
+            <ProjectCard
+              slug={post.slug}
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={post.data.externalUrl}
+              badge={post.data.badge}
+            />
+            <div class="my-5 divider" />
+          </>
+        ))}
+      </ul>
+    )
+  }
+</BaseLayout>
