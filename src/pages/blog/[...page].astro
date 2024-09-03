@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import HorizontalCard from "../../components/HorizontalCard.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import createSlug from "../../lib/createSlug";
+import HorizontalCard from "@components/HorizontalCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import createSlug from "src/lib/createSlug";
 
 export async function getStaticPaths({ paginate }) {
 	const posts = await getCollection("blog");
@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
 
 async function listTags() {
 	const posts = await getCollection("blog");
-	const tags = new Set();
+	const tags = new Set<string>();
 
 	posts.forEach((post) => {
 		if (post.data.tags) {

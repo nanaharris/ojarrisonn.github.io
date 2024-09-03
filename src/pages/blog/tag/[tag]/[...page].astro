@@ -1,8 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import HorizontalCard from "@components/HorizontalCard.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import createSlug from "../../../../lib/createSlug";
 
 export async function getStaticPaths({ paginate }) {
 	const all_posts = await getCollection("blog");
