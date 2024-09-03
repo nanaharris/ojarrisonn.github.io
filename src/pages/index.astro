@@ -12,8 +12,8 @@ const projects = (await getCollection("projects")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const last_posts = posts.slice(0, 3);
-const last_projects = projects.slice(0, 3);
+const last_posts = posts.slice(0, 5);
+const last_projects = projects.slice(0, 5);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
