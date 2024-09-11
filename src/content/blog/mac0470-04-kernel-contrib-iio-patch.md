@@ -1,7 +1,7 @@
 ---
 title: '[MAC0470#04] - Enviando um patch'
 description: 'Hora da verdade, enviando nossa contribuição'
-pubDate: 'Apr 20 2024'
+pubDate: 'Apr 19 2024'
 heroImage: '/kernel-dev.jpg'
 tags: ['mac0470']
 ---

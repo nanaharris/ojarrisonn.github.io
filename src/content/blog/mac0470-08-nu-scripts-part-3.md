@@ -1,7 +1,7 @@
 ---
 title: '[MAC0470#08] - Nu scripts pt. 3'
 description: 'ASDF'
-pubDate: 'Jun 05 2024'
+pubDate: 'Jun 04 2024'
 heroImage: '/nuscripts.jpg'
 tags: ['mac0470']
 ---

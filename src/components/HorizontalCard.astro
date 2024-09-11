@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import TagBadge from "./text/TagBadge.astro";
 
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 const tag_url = `${url.split("/").slice(0, -1).join("/")}/tag`;
 ---
 
 <div
-  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] hover:border-solid hover:border-primary hover:border-2"
 >
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
@@ -32,9 +33,7 @@ const tag_url = `${url.split("/").slice(0, -1).join("/")}/tag`;
           {
             tags &&
               tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
-                </a>
+                <TagBadge text={tag} url={`${tag_url}/${tag}`} />
               ))
           }
         </div>

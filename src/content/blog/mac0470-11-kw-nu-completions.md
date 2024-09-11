@@ -1,7 +1,7 @@
 ---
 title: '[MAC0470#11] - Nu Scripts e KW'
 description: 'O crossover'
-pubDate: 'Jun 23 2024'
+pubDate: 'Jun 22 2024'
 heroImage: '/nuscripts.jpg'
 tags: ['mac0470']
 ---

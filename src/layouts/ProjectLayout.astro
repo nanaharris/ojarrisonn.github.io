@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import type { ProjectSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import Link from "@components/text/Link.astro";
 
 export interface Props extends ProjectSchema {}
 
@@ -21,7 +22,7 @@ const displayDate = dayjs(pubDate).format("ll");
       {pubDate && <time>{displayDate}</time>}
       <br />
       {badge && <div class="badge badge-secondary my-1">{badge}</div>}
-      {externalUrl && <><br /><a href={externalUrl} class="text-primary underline">{externalUrl}</a></>}
+      {externalUrl && <><br /><Link href={externalUrl}>{externalUrl}</Link></>}
       
       <div class="divider my-2"></div>
       <slot />
