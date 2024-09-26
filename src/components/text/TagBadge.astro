@@ -1,11 +1,10 @@
 ---
 interface Props {
-    text: string;
-    url: string;
+	text: string;
+	url: string;
 }
 
 const { text, url } = Astro.props;
-
 ---
 
 <a href={`${url}`} class="badge badge-outline hover:border-secondary hover:text-secondary">
