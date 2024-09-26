@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import HorizontalCard from "@components/HorizontalCard.astro";
+import TagBadge from "@components/text/TagBadge.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import createSlug from "src/lib/createSlug";
-import TagBadge from "@components/text/TagBadge.astro";
 
 export async function getStaticPaths({ paginate }) {
 	const posts = await getCollection("blog");
