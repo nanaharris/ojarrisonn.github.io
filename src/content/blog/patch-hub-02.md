@@ -2,7 +2,7 @@
 title: '[Patch-Hub #02] - Logger'
 description: 'Primeira feature, um logger'
 pubDate: 'Sep 25 2024'
-heroImage: '/nuscripts.jpg'
+heroImage: '/patch-hub.png'
 tags: ['patch-hub', 'mac0214', 'mac0456']
 ---
 

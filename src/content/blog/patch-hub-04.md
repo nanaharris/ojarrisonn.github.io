@@ -2,7 +2,7 @@
 title: '[Patch-Hub #04] - UX'
 description: 'Adicionando melhorias de experiência para os usuários'
 pubDate: 'Nov 27 2024'
-heroImage: '/nuscripts.jpg'
+heroImage: '/patch-hub.png'
 tags: ['patch-hub', 'mac0214', 'mac0456']
 ---
 
