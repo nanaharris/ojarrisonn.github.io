@@ -2,7 +2,7 @@
 title: '[Patch-Hub #03] - Renderizando Patches'
 description: 'Integrando o patch-hub com mais ferramentas de software livre'
 pubDate: 'Sep 26 2024'
-heroImage: '/nuscripts.jpg'
+heroImage: '/patch-hub.png'
 tags: ['patch-hub', 'mac0214', 'mac0456']
 ---
 

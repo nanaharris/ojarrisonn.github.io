@@ -2,7 +2,7 @@
 title: '[Patch-Hub #01] - O começo'
 description: 'Introdução ao projeto e primeiros passos'
 pubDate: 'Aug 21 2024'
-heroImage: '/nuscripts.jpg'
+heroImage: '/patch-hub.png'
 tags: ['patch-hub', 'mac0214', 'mac0456']
 ---
 
