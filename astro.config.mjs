@@ -7,6 +7,6 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astrofy-template.netlify.app',
+  site: 'https://harrison.dev',
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });
