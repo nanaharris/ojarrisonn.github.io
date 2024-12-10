@@ -1,0 +1,14 @@
+{
+  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.13.6/.schema/devbox.schema.json",
+  "packages": ["bun@1.1"],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "dev": "bun run dev",
+      "lint": "bunx biome check src",
+      "lint-fix": "bunx biome check --write src"
+    }
+  }
+}
