@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import HorizontalCard from "@components/HorizontalCard.astro";
-import RedirectCard from "@components/RedirectCard";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import createSlug from "src/lib/createSlug";
 
@@ -40,7 +39,7 @@ const last_projects = projects.slice(0, 5);
           title={project.data.title}
           img={project.data.heroImage}
           desc={project.data.description}
-          url={"/projects/" + createSlug(project.data.title, project.slug)}
+          url={"/projects/" + createSlug(project.data.title, project.id)}
           target="_self"
         />
       </>
@@ -60,7 +59,7 @@ const last_projects = projects.slice(0, 5);
           title={post.data.title}
           img={post.data.heroImage}
           desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          url={"/blog/" + createSlug(post.data.title, post.id)}
           target="_self"
           badge={post.data.badge}
         />

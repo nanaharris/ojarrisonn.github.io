@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-import type { BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import type { BlogSchema } from "src/content.config";
 
 export interface Props extends BlogSchema {}
 
@@ -15,9 +13,9 @@ const {
 	heroImage,
 	badge,
 	tags = [],
-} = Astro.props;
-dayjs.extend(localizedFormat);
-const displayDate = dayjs(pubDate).format("ll");
+} = Astro.props as Props;
+
+const displayDate = pubDate;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}, ogType="article">

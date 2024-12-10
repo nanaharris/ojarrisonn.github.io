@@ -1,17 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import Link from "@components/text/Link.astro";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-import type { ProjectSchema } from "../content/config";
+import type { ProjectSchema } from "src/content.config";
 import BaseLayout from "./BaseLayout.astro";
 
 export interface Props extends ProjectSchema {}
 
 const { title, description, pubDate, heroImage, badge, externalUrl } =
 	Astro.props;
-dayjs.extend(localizedFormat);
-const displayDate = dayjs(pubDate).format("ll");
+
+const displayDate = pubDate;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}, ogType="article">
