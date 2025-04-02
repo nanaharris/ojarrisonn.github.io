@@ -1,0 +1,11 @@
+[tools]
+bun = "1.2"
+
+[tasks.dev]
+run = "bun run dev"
+
+[tasks.lint]
+run = "bun x biome check src"
+
+[tasks.fix]
+run = "bun x biome check --write src"
