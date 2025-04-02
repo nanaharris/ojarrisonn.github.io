@@ -2,6 +2,11 @@
 import TimeLineElement from "@components/cv/TimeLine.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { CONTACT_EMAIL } from "src/config";
+import * as Io from "react-icons/io5";
+import * as Fa from "react-icons/fa";
+import * as Si from "react-icons/si";
+import * as Tb from "react-icons/tb";
+import * as Lu from "react-icons/lu";
 
 const age = Math.floor(
 	(Date.now() - new Date("2004-07-16").getTime()) /
@@ -46,15 +51,25 @@ const age = Math.floor(
       title="Dev at BikeSP - USP"
       subtitle="From February, 2024 to September, 2024"
     >
+      <Lu.LuBike slot="icon"/>
       I've received a scholarship to work as a developer at BikeSP, a project from the University of São Paulo that aims to test the availability of a public program to encourage the use of bicycles in the city of São Paulo.
       <br />
       I've done a lot of different tasks, mainly in the react-native Android application, but also in the project organization and documentation. 
     </TimeLineElement>
     <TimeLineElement
       title="Tech Lead at BikeSP - USP"
-      subtitle="Since October, 2024"
+      subtitle="From October, 2024 to March, 2025"
     >
+      <Lu.LuBike slot="icon"/>
       I've got promoted at BikeSP. Now besides my previous tasks, I'm also responsible for the technical decisions, the project architecture, team management and the project deployment
+    </TimeLineElement>
+    <TimeLineElement
+      title="Cloud Infrastructure Engineer Intern at Brex"
+      subtitle="Since March, 2025"
+    >
+      <Si.SiBrex slot="icon"/>
+      I got admitted for an internship at <a href="https://www.brex.com/" target="_blank">Brex</a> working in 
+      the Cloud Infrastructure team.
     </TimeLineElement>
   </div>
 
@@ -63,15 +78,15 @@ const age = Math.floor(
   </div>
 
   <ul class="list-none md:columns-5 columns-2 mx-6">
-    <li><span class="text-orange-400">󰊢 </span>Git</li>
-    <li><span class="text-blue-400">󰡨 </span>Docker</li>
-    <li><span class="text-orange-600"> </span>Rust</li>
-    <li><span class="text-yellow-400"> </span>JS/TS</li>
-    <li><span class="text-yellow-400">󰌠 </span>Python</li>
-    <li><span class="text-cyan-400">󰖟 </span>Web</li>
-    <li><span class="text-yellow-100"> </span>Database</li>
-    <li><span class="text-fuchsia-600">󱈙 </span>Kotlin</li>
-    <li><span class="text-green-500"> </span>Shell</li>
-    <li><span class="text-red-700">󰘧 </span>Functional Programming</li>
+    <li><span class="text-orange-400"><Fa.FaGitAlt className="inline"/> </span>Git</li>
+    <li><span class="text-blue-400"><Io.IoLogoDocker className="inline" /> </span>Docker</li>
+    <li><span class="text-orange-600"><Fa.FaRust className="inline"/> </span>Rust</li>
+    <li><span class="text-yellow-400"><Fa.FaJsSquare className="inline"/> </span>JS/TS</li>
+    <li><span class="text-yellow-400"><Fa.FaPython className="inline"/> </span>Python</li>
+    <li><span class="text-cyan-400"><Io.IoGlobeOutline className="inline"/> </span>Web</li>
+    <li><span class="text-yellow-100"><Fa.FaDatabase className="inline"/> </span>Database</li>
+    <li><span class="text-fuchsia-600"><Si.SiKotlin className="inline"/> </span>Kotlin</li>
+    <li><span class="text-green-500"><Si.SiGnubash className="inline" /> </span>Shell</li>
+    <li><span class="text-red-700"><Tb.TbLambda className="inline" /> </span>Functional Programming</li>
   </ul>
 </BaseLayout>
