@@ -20,6 +20,18 @@ module.exports = {
 					"warning": "#fab387",
 					"error": "#f38ba8",
 				},
+			},{
+				"catppuccin-amoled": {
+					"primary": "#cba6f7",
+					"secondary": "#f5c2e7",
+					"accent": "#cba6f7",
+					"neutral": "#313244",
+					"base-100": "#000",
+					"info": "#7ac7ec",
+					"success": "#a6e3a1",
+					"warning": "#fab387",
+					"error": "#f38ba8",
+				},
 			}
 		], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
 		darkTheme: "dark", // name of one of the included themes for dark mode
