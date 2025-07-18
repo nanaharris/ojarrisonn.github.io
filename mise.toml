@@ -1,5 +1,5 @@
 [tools]
-bun = "1.2"
+bun = "1.2.18"
 
 [tasks.dev]
 run = "bun run dev"
