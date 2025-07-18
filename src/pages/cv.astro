@@ -1,28 +1,32 @@
 ---
 import TimeLineElement from "@components/cv/TimeLine.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { CONTACT_EMAIL } from "src/config";
+import { CONTACT_EMAIL, SPECIAL_DATES } from "src/config";
 import * as Io from "react-icons/io5";
 import * as Fa from "react-icons/fa";
 import * as Si from "react-icons/si";
 import * as Tb from "react-icons/tb";
 import * as Lu from "react-icons/lu";
+import Link from "@components/text/Link.astro";
 
+const today = new Date();
 const age = Math.floor(
-	(Date.now() - new Date("2004-07-16").getTime()) /
+	(today.getTime() - new Date("2004-07-16").getTime()) /
 		(1000 * 60 * 60 * 24 * 365.25),
 );
+const specialMessage: string | undefined = SPECIAL_DATES[today.getMonth()]?.[today.getDate()];
+
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <div class="text-3xl w-full font-bold">Profile {specialMessage ? `(${specialMessage})` : ""}</div>
   </div>
 
   <div class="mb-10 text-justify">
-    My name is Jorge Harrisonn, I am a {age} years old Computer Science student at the University of São Paulo (USP) who is passionate about technology and programming. 
+    My name is Harrisonn, I am a {age} years old Computer Science student at the University of São Paulo (USP) who is passionate about technology and programming. 
     <br />
-    As a self-taught, I started learning programming at the age of 12 by my self at home with my old laptop and a 1 Mbps internet connection. Since then, I've learnt a lot of different technologies and concepts. This helped me a lot to be able to learn new stuff quickly.
+    As a self-taught, I started learning programming at the age of 12 by my self at home with my old laptop and a 1 Mbps internet connection. Since then, I've learnt a couple of different technologies and concepts. This helped me a lot to be able to learn new stuff quickly.
     <br />
     You can email me <a href=`mailto:${CONTACT_EMAIL}` class="text-accent">&lt;{CONTACT_EMAIL}&gt;</a>.
   </div>
@@ -48,11 +52,11 @@ const age = Math.floor(
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Dev at BikeSP - USP"
+      title="Developer at BikeSP - USP"
       subtitle="From February, 2024 to September, 2024"
     >
       <Lu.LuBike slot="icon"/>
-      I've received a scholarship to work as a developer at BikeSP, a project from the University of São Paulo that aims to test the availability of a public program to encourage the use of bicycles in the city of São Paulo.
+      I've received a scholarship to work as a developer at <a href="https://interscity.org/bikesp/" class:list={["text-primary", "font-medium"]}>BikeSP</a>, a project from the University of São Paulo that aims to test the availability of a public program to encourage the use of bicycles in the city of São Paulo.
       <br />
       I've done a lot of different tasks, mainly in the react-native Android application, but also in the project organization and documentation. 
     </TimeLineElement>
@@ -61,20 +65,19 @@ const age = Math.floor(
       subtitle="From October, 2024 to March, 2025"
     >
       <Lu.LuBike slot="icon"/>
-      I've got promoted at BikeSP. Now besides my previous tasks, I'm also responsible for the technical decisions, the project architecture, team management and the project deployment
+      I was promoted at <a href="https://interscity.org/bikesp/" class:list={["text-primary", "font-medium"]}>BikeSP</a>. In addition to my previous tasks, I was also responsible for technical decisions, project architecture, team management, and project deployment.
     </TimeLineElement>
     <TimeLineElement
       title="Cloud Infrastructure Engineer Intern at Brex"
       subtitle="Since March, 2025"
     >
       <Si.SiBrex slot="icon"/>
-      I got admitted for an internship at <a href="https://www.brex.com/" target="_blank">Brex</a> working in 
-      the Cloud Infrastructure team.
+      I was accepted for an internship at <a href="https://www.brex.com/" class:list={["text-primary", "font-medium"]}>Brex</a>, working on the Cloud Infrastructure team.
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <div class="text-3xl w-full font-bold">Technologies</div>
   </div>
 
   <ul class="list-none md:columns-5 columns-2 mx-6">
@@ -84,9 +87,11 @@ const age = Math.floor(
     <li><span class="text-yellow-400"><Fa.FaJsSquare className="inline"/> </span>JS/TS</li>
     <li><span class="text-yellow-400"><Fa.FaPython className="inline"/> </span>Python</li>
     <li><span class="text-cyan-400"><Io.IoGlobeOutline className="inline"/> </span>Web</li>
-    <li><span class="text-yellow-100"><Fa.FaDatabase className="inline"/> </span>Database</li>
+    <li><span class="text-blue-400"><Si.SiPostgresql className="inline"/> </span>Postgres</li>
     <li><span class="text-fuchsia-600"><Si.SiKotlin className="inline"/> </span>Kotlin</li>
     <li><span class="text-green-500"><Si.SiGnubash className="inline" /> </span>Shell</li>
-    <li><span class="text-red-700"><Tb.TbLambda className="inline" /> </span>Functional Programming</li>
+    <li><span class="text-red-700"><Tb.TbLambda className="inline" /> </span>FP</li>
+    <li><span class="text-purple-700"><Si.SiTerraform className="inline" /> </span>Terraform</li>
+    <li><span class="text-orange-500"><Fa.FaAws className="inline" /> </span>AWS</li>
   </ul>
 </BaseLayout>
